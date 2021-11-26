@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
+/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:29:21 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 18:47:33by dodjian          ###   ########.fr       */
+/*   Updated: 2021/11/26 23:01:05 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include <stdio.h> 
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
@@ -112,9 +112,9 @@ void	do_ss(t_db *dbla, t_db *dblb);
 void	do_sa(t_db *dbla, t_db *dblb);
 void	do_sb(t_db *dbla, t_db *dblb);
 int		ft_next_lower_bis(int *tab);
-int		nbr_inter_forward(int *tab, int *bubbled, int last, int totInter);
-int		nbr_inter_backward(int *tab, int *bubbled, int last);
-int		ft_intermed_lower(int *tab, int *bubbled);
+int		nbr_inter_forward(int *tab, int *bubled, int last, int totInter);
+int		nbr_inter_backward(int *tab, int *bubled, int last);
+int		ft_intermed_lower(int *tab, int *bubled);
 int		size_array(int *tab, int size);
 void	display_tab(int *tab, int size);
 int		ft_get_tier(int *tab);
@@ -124,12 +124,12 @@ void	ft_do(t_db *dbla, t_db *dblb, int size);
 int		is_sup(t_db *dbl);
 int		*ls_ar(t_db *dbl);
 void	ft_quatre_split(t_db *dbla, t_db *dblb);
-int		ft_same(t_db *dbla, int *bubbled, int size);
+int		ft_same(t_db *dbla, int *bubled, int size);
 int		ft_fill_stack(char **argv, t_db *dbla);
 void	ft_fill_first_coor_alt(int size, int *tab);
 void	ft_fill_first_coor(int size, t_db *dbl);
 void	ft_init_first_coor(int size, int argc);
-int		*ft_bubble(int *tab, int size);
+int		*ft_buble(int *tab, int size);
 t_ccr	ft_fill_coor(t_ccr coor, t_db *dbl);
 t_ccr	ft_fill_coor_alt(t_ccr coor, int *tab);
 int		ft_get_med(int *tab, int size);
@@ -154,6 +154,6 @@ void	ft_rr(t_db *dbla, t_db *dblb);
 void	ft_rra(t_db *dbla);
 void	ft_rrb(t_db *dbla);
 void	ft_rrr(t_db *dbla, t_db *dblb);
-int		*ft_reverse_bubble(int *tab, int size);
+int		*ft_reverse_buble(int *tab, int size);
 
 #endif

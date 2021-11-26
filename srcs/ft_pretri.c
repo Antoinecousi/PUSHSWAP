@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pretri.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
+/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:18:30 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 19:27:26 by dodjian          ###   ########.fr       */
+/*   Updated: 2021/11/26 23:02:08 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_quatre_split(t_db *dbla, t_db *dblb)
 	int	*tab;
 	int	med;
 
-	tab = ft_bubble(ls_ar(dbla), ls_size(dbla));
+	tab = ft_buble(ls_ar(dbla), ls_size(dbla));
 	med = tab[ls_size(dbla) - 5];
 	while (ls_size(dbla) > 5)
 	{

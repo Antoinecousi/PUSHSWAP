@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
+/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:48:16 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 19:49:51 by dodjian          ###   ########.fr       */
+/*   Updated: 2021/11/26 23:02:08 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	size_array(int *tab, int size)
 	return (size);
 }
 
-int	ft_same(t_db *dbla, int *bubbled, int size)
+int	ft_same(t_db *dbla, int *bubled, int size)
 {
 	int		i;
 	t_lst	*a;
@@ -31,15 +31,15 @@ int	ft_same(t_db *dbla, int *bubbled, int size)
 	a = dbla->f;
 	while (i < size)
 	{
-		if (a->a != bubbled[i])
+		if (a->a != bubled[i])
 		{
-			free(bubbled);
+			free(bubled);
 			return (1);
 		}
 		a = a->next;
 		i++;
 	}
-	free(bubbled);
+	free(bubled);
 	return (0);
 }
 
@@ -93,8 +93,6 @@ int	main(int argc, char **argv)
 	char	**splited;
 
 	splited = NULL;
-	//dbla = malloc(sizeof(t_db));
-	//dblb = malloc(sizeof(t_db));
 	ft_init_dblist(&dbla);
 	ft_init_dblist(&dblb);
 	if (argc < 2)
@@ -104,19 +102,15 @@ int	main(int argc, char **argv)
 	if (ft_checker(splited))
 		return (0);
 	ft_fill_stack(splited, &dbla);
-	if (!ft_same(&dbla, ft_bubble(ls_ar(&dbla), ls_size(&dbla)), ls_size(&dbla)))
+	if (!ft_same(&dbla, ft_buble(ls_ar(&dbla), ls_size(&dbla)), ls_size(&dbla)))
 	{
-		free(ft_bubble(ls_ar(&dbla), ls_size(&dbla)));
+		free(ft_buble(ls_ar(&dbla), ls_size(&dbla)));
 		ffree(&dbla, &dblb);
 		free_split(splited);
 		return (0);
 	}
 	choose_sort_stack(&dbla, &dblb, argc - 1);
 	ffree(&dbla, &dblb);
-	//free(dbla);
-	//free(dblb);
-	//free(ft_bubble(ls_ar(&dbla), ls_size(&dbla)));
 	free_split(splited);
-	//free(splited);
 	return (0);
 }

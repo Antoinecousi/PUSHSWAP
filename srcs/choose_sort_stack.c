@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_sort_stack.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
+/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 01:43:53 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 19:30:43 by dodjian          ###   ########.fr       */
+/*   Updated: 2021/11/26 23:02:08 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	sort_one_to_five(t_db *dbla, t_db *dblb)
 {
 	while (ls_size(dbla) == 4
-		&& ft_same(dbla, ft_bubble(ls_ar(dbla), ls_size(dbla)), ls_size(dbla)))
+		&& ft_same(dbla, ft_buble(ls_ar(dbla), ls_size(dbla)), ls_size(dbla)))
 		move_four(dbla, dblb);
 	while (ls_size(dbla) == 5
-		&& ft_same(dbla, ft_bubble(ls_ar(dbla), ls_size(dbla)), ls_size(dbla)))
+		&& ft_same(dbla, ft_buble(ls_ar(dbla), ls_size(dbla)), ls_size(dbla)))
 		move_five(dbla, dblb);
 	sort_three_numbers(dbla, dblb);
 	while (ls_size(dblb) > 0 && ls_size(dbla) < 5)

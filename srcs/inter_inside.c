@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter_inside.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
+/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:03:31 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 20:22:28 by dodjian          ###   ########.fr       */
+/*   Updated: 2021/11/26 23:02:08 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_forwardb(t_db *dbla, t_db *dblb, int *bub)
 		do_rrb(dbla, dblb);
 	if (dblb->f->a == bub[1])
 		do_pa(dbla, dblb);
-	bub = ft_reverse_bubble(ls_ar(dblb), ls_size(dblb));
+	bub = ft_reverse_buble(ls_ar(dblb), ls_size(dblb));
 	while (dblb->f->a != bub[0]
 		&& r_rr(ls_ar(dblb), bub[0], ls_size(dblb)) > 1)
 		do_rb(dbla, dblb);
@@ -51,7 +51,7 @@ int	ft_backwardb(t_db *dbla, t_db *dblb, int *bub)
 		do_rrb(dbla, dblb);
 	if (dblb->f->a == bub[1])
 		do_pa(dbla, dblb);
-	bub = ft_reverse_bubble(ls_ar(dblb), ls_size(dblb));
+	bub = ft_reverse_buble(ls_ar(dblb), ls_size(dblb));
 	while (dblb->f->a != bub[0]
 		&& r_rr(ls_ar(dblb), bub[0], ls_size(dblb)) > 1)
 		do_rb(dbla, dblb);

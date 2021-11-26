@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
+/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 18:41:52 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 18:47:42 by dodjian          ###   ########.fr       */
+/*   Updated: 2021/11/26 23:10:35 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,22 +65,25 @@ int	ft_check_doublons(char **argv)
 int	is_not_a_number(char *str)
 {
 	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\r'
 		|| str[i] == '\v' || str[i] == '\f')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
+	{
 		i++;
+		j++;
+	}
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\r'
 		|| str[i] == '\v' || str[i] == '\f')
 		i++;
-	if (str[i] != '\0')
-	{
+	if (str[i] != '\0' || j > 10)
 		return (1);
-	}
 	return (0);
 }
 

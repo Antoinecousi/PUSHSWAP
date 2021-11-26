@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   srcs.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
+/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:23:43 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 20:11:14 by dodjian          ###   ########.fr       */
+/*   Updated: 2021/11/26 23:03:52 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_get_med_div(int *tab, int div_med, int size)
 {
 	int		med;
 
-	tab = ft_bubble(tab, size);
+	tab = ft_buble(tab, size);
 	med = tab[(size - 1) / div_med];
 	free(tab);
 	return (med);
@@ -45,12 +45,12 @@ int	ft_get_med(int *tab, int size)
 	i = 0;
 	while (tab[i])
 		i++;
-	tab = ft_bubble(tab, size);
+	tab = ft_buble(tab, size);
 	med = tab[(i - 1) / 2];
 	return (med);
 }
 
-int	*ft_bubble(int *tab, int size)
+int	*ft_buble(int *tab, int size)
 {
 	int		tmp;
 	int		i;
@@ -72,7 +72,7 @@ int	*ft_bubble(int *tab, int size)
 	return (tab);
 }
 
-int	*ft_reverse_bubble(int *tab, int size)
+int	*ft_reverse_buble(int *tab, int size)
 {
 	int		tmp;
 	int		i;

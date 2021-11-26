@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_5_and_less.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
+/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 18:41:57 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 20:27:16 by dodjian          ###   ########.fr       */
+/*   Updated: 2021/11/26 23:02:08 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,11 @@ void	sort_three_numbers(t_db *dbla, t_db *dblb)
 void	move_four(t_db *dbla, t_db *dblb)
 {
 	int		*tab;
-	int		*bubbled;
+	int		*bubled;
 
 	tab = ls_ar(dbla);
-	bubbled = ft_bubble(tab, ls_size(dbla));
-	if (bubbled[0] == tab[3])
+	bubled = ft_buble(tab, ls_size(dbla));
+	if (bubled[0] == tab[3])
 	{
 		do_rra(dbla, dblb);
 		do_pb(dbla, dblb);
@@ -80,24 +80,24 @@ void	move_four(t_db *dbla, t_db *dblb)
 	{
 		while (ls_size(dbla) > 3)
 		{
-			if (dbla->f->a == bubbled[0])
+			if (dbla->f->a == bubled[0])
 				do_pb(dbla, dblb);
 			else
 				do_ra(dbla, dblb);
 		}
 	}
-	free(bubbled);
+	free(bubled);
 }
 
 void	move_five(t_db *dbla, t_db *dblb)
 {
 	int		*tab;
-	int		*bubbled;
+	int		*bubled;
 
 	tab = ls_ar(dbla);
-	bubbled = ft_bubble(tab, ls_size(dbla));
-	if ((bubbled[0] == tab[3] && bubbled[1] == tab[4])
-		|| (bubbled[0] == tab[4] && bubbled[1] == tab[3]))
+	bubled = ft_buble(tab, ls_size(dbla));
+	if ((bubled[0] == tab[3] && bubled[1] == tab[4])
+		|| (bubled[0] == tab[4] && bubled[1] == tab[3]))
 	{
 		do_rra(dbla, dblb);
 		do_rra(dbla, dblb);
@@ -108,11 +108,11 @@ void	move_five(t_db *dbla, t_db *dblb)
 	{
 		while (ls_size(dbla) > 3)
 		{
-			if (dbla->f->a == bubbled[0] || dbla->f->a == bubbled[1])
+			if (dbla->f->a == bubled[0] || dbla->f->a == bubled[1])
 				do_pb(dbla, dblb);
 			else
 				do_ra(dbla, dblb);
 		}
 	}
-	free(bubbled);
+	free(bubled);
 }
