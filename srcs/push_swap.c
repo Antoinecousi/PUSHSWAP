@@ -6,7 +6,7 @@
 /*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:48:16 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 17:05:02 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 18:31:57 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ char	**array_str_copy(char **str, int size)
 
 int	main(int argc, char **argv)
 {
-	t_ccr	coor;
 	t_db	*dbla;
 	t_db	*dblb;
 	char	**splited;
@@ -104,9 +103,10 @@ int	main(int argc, char **argv)
 	ft_fill_stack(splited, dbla);
 	if (!ft_same(dbla, ft_bubble(ls_ar(dbla), ls_size(dbla)), ls_size(dbla)))
 		return (0);
-	ft_fill_first_coor(&coor, dbla);
-	choose_sort_stack(dbla, dblb, &coor);
+	choose_sort_stack(dbla, dblb, argc - 1);
 	ffree(dbla, dblb);
+	free(dbla);
+	free(dblb);
 	free_split(splited);
 	return (0);
 }

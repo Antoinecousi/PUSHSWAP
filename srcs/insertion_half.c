@@ -6,7 +6,7 @@
 /*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 01:46:21 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 17:03:56 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 18:12:04 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ void	take_inter(t_db *dbla, t_db *dblb, int *c)
 	}
 }
 
-void	ft_do(t_db *dbla, t_db *dblb, t_ccr *coor)
+void	ft_do(t_db *dbla, t_db *dblb, int size)
 {
 	int		*c;
 
 	c = ft_bubble(ls_ar(dbla), ls_size(dbla));
-	choose_sort_stack(dbla, dblb, coor);
+	choose_sort_stack(dbla, dblb, size);
 	while (dblb->f)
 	{
 		c = ft_reverse_bubble(ls_ar(dblb), ls_size(dblb));

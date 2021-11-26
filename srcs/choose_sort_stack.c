@@ -6,7 +6,7 @@
 /*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 01:43:53 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 04:20:38 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 18:13:06 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ void	sort_one_to_five(t_db *dbla, t_db *dblb)
 		do_sa(dbla, dblb);
 }
 
-void	choose_sort_stack(t_db *dbla, t_db *dblb, t_ccr *coor)
+void	choose_sort_stack(t_db *dbla, t_db *dblb, int size)
 {
 	if (ls_size(dbla) <= 3)
 		sort_three_numbers(dbla, dblb);
 	else if (ls_size(dbla) > 3 && ls_size(dbla) <= 5)
 		sort_one_to_five(dbla, dblb);
 	else if (ls_size(dbla) <= 100)
-		sort_one_hundred(dbla, dblb, coor);
+		sort_one_hundred(dbla, dblb, size);
 	else
-		sort_more_one_hundred(dbla, dblb, coor);
+		sort_more_one_hundred(dbla, dblb, size);
 }

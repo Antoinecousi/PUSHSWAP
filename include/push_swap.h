@@ -6,7 +6,7 @@
 /*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:29:21 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 17:04:03 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 18:11:01 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,25 +64,24 @@ void	move_four(t_db *dbla, t_db *dblb);
 int		is_not_a_number(char *str);
 long	long_atoi(char *str);
 int		ft_check_doublons(char **argv);
-void	sort_more_one_hundred(t_db *dbla, t_db *dblb, t_ccr *coor);
-void	sort_one_hundred(t_db *dbla, t_db *dblb, t_ccr *coor);
+void	sort_more_one_hundred(t_db *dbla, t_db *dblb, int size);
+void	sort_one_hundred(t_db *dbla, t_db *dblb, int size);
 int		utils_sort_three(t_db *dbla, t_db *dblb);
 void	a_bigger_than_b(t_db *dbla, t_db *dblb);
 void	sort_three_numbers(t_db *dbla, t_db *dblb);
 void	move_smallest_nbr_to_top(t_db *dbla, t_db *dblb, int size);
 void	sort_one_to_five(t_db *dbla, t_db *dblb);
-void	choose_sort_stack(t_db *dbla, t_db *dblb, t_ccr *coor);
+void	choose_sort_stack(t_db *dbla, t_db *dblb, int size);
 int		ft_get_med_div_b(int *tab, int div_med, int size);
 int		ft_splitterbdeux(t_db *dbla, t_db *dblb, int until, int div_med);
 int		ft_get_med_div(int *tab, int div_med, int size);
 int		*ft_tab_reducer(int lenght, int *tab);
 int		ft_is_croissant(t_db *dbla);
-int		ft_recursiveshit(t_ccr *coor, t_db *dbla, t_db *dblb);
+int		ft_recursiveshit(int size, t_db *dbla, t_db *dblb);
 int		ft_position(int *tab, int inter);
 int		topOrBottomHard(int *tab, int inter, int final);
 int		topOrBot(int *tab, int c);
 int		ft_take_inter(int *tab, int inter, int final, int size);
-int		ft_decoupage(t_ccr *coor, t_db *dbla, t_db *dblb, int size);
 int		ft_splitterb(t_db *dbla, t_db *dblb, int until, int div_med);
 int		ft_get_med_div_b(int *tab, int div_med, int size);
 int		ft_splitter(t_db *dbla, t_db *dblb, int until, int div_med);
@@ -121,15 +120,15 @@ void	display_tab(int *tab, int size);
 int		ft_get_tier(int *tab);
 int		ft_next_lower(int *tab);
 void	display_lists(t_db *dbla, t_db *dblb);
-void	ft_do(t_db *dbla, t_db *dblb, t_ccr *coor);
+void	ft_do(t_db *dbla, t_db *dblb, int size);
 int		is_sup(t_db *dbl);
 int		*ls_ar(t_db *dbl);
 void	ft_quatre_split(t_db *dbla, t_db *dblb);
 int		ft_same(t_db *dbla, int *bubbled, int size);
 int		ft_fill_stack(char **argv, t_db *dbla);
-void	ft_fill_first_coor_alt(t_ccr *coor, int *tab);
-void	ft_fill_first_coor(t_ccr *coor, t_db *dbl);
-void	ft_init_first_coor(t_ccr *coor, int argc);
+void	ft_fill_first_coor_alt(int size, int *tab);
+void	ft_fill_first_coor(int size, t_db *dbl);
+void	ft_init_first_coor(int size, int argc);
 int		*ft_bubble(int *tab, int size);
 t_ccr	ft_fill_coor(t_ccr coor, t_db *dbl);
 t_ccr	ft_fill_coor_alt(t_ccr coor, int *tab);
