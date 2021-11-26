@@ -6,7 +6,7 @@
 /*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:48:16 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 15:49:47 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:05:02 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	ft_same(t_db *dbla, int *bubbled, int size)
 		a = a->next;
 		i++;
 	}
+	free(bubbled);
 	return (0);
 }
 
@@ -105,6 +106,7 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_fill_first_coor(&coor, dbla);
 	choose_sort_stack(dbla, dblb, &coor);
-	free(splited);
+	ffree(dbla, dblb);
+	free_split(splited);
 	return (0);
 }

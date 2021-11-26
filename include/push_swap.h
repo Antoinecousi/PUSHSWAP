@@ -6,7 +6,7 @@
 /*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:29:21 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 03:09:08 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:04:03 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ typedef struct t_ccr
 	int		fouhuitieme;
 }				t_ccr;
 
+void	free_split(char **splited);
+void	ffree(t_db *dbla, t_db *dblb);
 void	move_five(t_db *dbla, t_db *dblb);
 void	move_four(t_db *dbla, t_db *dblb);
 int		is_not_a_number(char *str);

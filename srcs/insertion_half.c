@@ -6,11 +6,36 @@
 /*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 01:46:21 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 04:20:38 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:03:56 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	free_split(char **splited)
+{
+	int		i;
+
+	i = 0;
+	while (splited[i])
+		free(splited[i++]);
+	free(splited);
+}
+
+void	ffree(t_db *dbla, t_db *dblb)
+{
+	t_lst	*a;
+	t_lst	*copy;
+
+	(void)dblb;
+	a = dbla->f;
+	while (a != NULL)
+	{
+		copy = a->next;
+		free(a);
+		a = copy;
+	}
+}
 
 void	take_next(t_db *dbla, t_db *dblb, int *c)
 {
@@ -42,9 +67,7 @@ void	take_inter(t_db *dbla, t_db *dblb, int *c)
 void	ft_do(t_db *dbla, t_db *dblb, t_ccr *coor)
 {
 	int		*c;
-	int		i;
 
-	i = 0;
 	c = ft_bubble(ls_ar(dbla), ls_size(dbla));
 	choose_sort_stack(dbla, dblb, coor);
 	while (dblb->f)

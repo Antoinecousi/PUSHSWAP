@@ -6,7 +6,7 @@
 /*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:18:30 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 04:20:38 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 16:32:04 by acousini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ void	ft_quatre_split(t_db *dbla, t_db *dblb)
 
 int	ft_splitter(t_db *dbla, t_db *dblb, int until, int div_med)
 {
-	int	size_list;
 	int	i;
 	int	med;
 
-	size_list = ls_size(dbla);
 	i = 0;
 	while (ls_size(dbla) >= until)
 	{
