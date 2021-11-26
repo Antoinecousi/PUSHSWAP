@@ -6,7 +6,7 @@
 /*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 18:41:57 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 19:22:04 by dodjian          ###   ########.fr       */
+/*   Updated: 2021/11/26 20:27:16 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	move_four(t_db *dbla, t_db *dblb)
 				do_ra(dbla, dblb);
 		}
 	}
+	free(bubbled);
 }
 
 void	move_five(t_db *dbla, t_db *dblb)
