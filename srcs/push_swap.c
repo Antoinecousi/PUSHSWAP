@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:48:16 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 18:31:57 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:49:51 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ int	ft_same(t_db *dbla, int *bubbled, int size)
 	while (i < size)
 	{
 		if (a->a != bubbled[i])
+		{
+			free(bubbled);
 			return (1);
+		}
 		a = a->next;
 		i++;
 	}
@@ -47,7 +50,7 @@ int	*ls_ar(t_db *dbl)
 	t_lst	*a;
 
 	i = 0;
-	tab = malloc((sizeof(int *) * ls_size(dbl)) + 8);
+	tab = malloc((sizeof(int) * ls_size(dbl)) + 8);
 	a = dbl->f;
 	while (a != NULL)
 	{
@@ -85,28 +88,35 @@ char	**array_str_copy(char **str, int size)
 
 int	main(int argc, char **argv)
 {
-	t_db	*dbla;
-	t_db	*dblb;
+	t_db	dbla;
+	t_db	dblb;
 	char	**splited;
 
 	splited = NULL;
-	dbla = malloc(sizeof(t_db));
-	dblb = malloc(sizeof(t_db));
-	ft_init_dblist(dbla);
-	ft_init_dblist(dblb);
+	//dbla = malloc(sizeof(t_db));
+	//dblb = malloc(sizeof(t_db));
+	ft_init_dblist(&dbla);
+	ft_init_dblist(&dblb);
 	if (argc < 2)
 		return (0);
 	else
 		splited = array_str_copy(argv + 1, argc);
 	if (ft_checker(splited))
 		return (0);
-	ft_fill_stack(splited, dbla);
-	if (!ft_same(dbla, ft_bubble(ls_ar(dbla), ls_size(dbla)), ls_size(dbla)))
+	ft_fill_stack(splited, &dbla);
+	if (!ft_same(&dbla, ft_bubble(ls_ar(&dbla), ls_size(&dbla)), ls_size(&dbla)))
+	{
+		free(ft_bubble(ls_ar(&dbla), ls_size(&dbla)));
+		ffree(&dbla, &dblb);
+		free_split(splited);
 		return (0);
-	choose_sort_stack(dbla, dblb, argc - 1);
-	ffree(dbla, dblb);
-	free(dbla);
-	free(dblb);
+	}
+	choose_sort_stack(&dbla, &dblb, argc - 1);
+	ffree(&dbla, &dblb);
+	//free(dbla);
+	//free(dblb);
+	//free(ft_bubble(ls_ar(&dbla), ls_size(&dbla)));
 	free_split(splited);
+	//free(splited);
 	return (0);
 }

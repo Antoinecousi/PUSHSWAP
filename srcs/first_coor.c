@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   first_coor.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:07:46 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 18:13:35 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:46:13 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	r_rr(int *tab, int c, int size)
 			pos = i;
 		i++;
 	}
+	free(tab);
 	if (!pos)
 		return (0);
-	free(tab);
 	return (i / pos);
 }

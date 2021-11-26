@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter_inside.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:03:31 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 15:44:25 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:53:58 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	ft_forwardb(t_db *dbla, t_db *dblb, int *bub)
 		do_rrb(dbla, dblb);
 	do_pa(dbla, dblb);
 	do_sa(dbla, dblb);
+	free(bub);
 	return (i);
 }
 
@@ -59,5 +60,6 @@ int	ft_backwardb(t_db *dbla, t_db *dblb, int *bub)
 		do_rrb(dbla, dblb);
 	do_pa(dbla, dblb);
 	do_sa(dbla, dblb);
+	free(bub);
 	return (i);
 }

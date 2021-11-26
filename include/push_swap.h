@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:29:21 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 18:11:01 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 18:47:33by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ t_ccr	ft_fill_coor_alt(t_ccr coor, int *tab);
 int		ft_get_med(int *tab, int size);
 int		ft_isnumber(char *argv);
 int		ft_istoohigh(char *argv);
-int		ft_error(int c);
+int		ft_error(char **splited, int c);
 int		ft_next_upper(int *tab);
 void	init_ins(t_cor *ins);
 int		ft_checker(char **argv);

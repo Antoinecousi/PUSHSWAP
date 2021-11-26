@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 18:41:52 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 04:20:38 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 18:47:42 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,9 @@ int	ft_isnumber(char *argv)
 	return (0);
 }
 
-int	ft_error(int c)
+int	ft_error(char **splited, int c)
 {
 	write(1, "Error\n", 6);
+	free_split(splited);
 	return (c);
 }

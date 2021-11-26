@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions_third.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 01:28:53 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 18:27:26 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 18:47:05 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,21 @@ void	ft_ra(t_db *dbla)
 	free(a);
 }
 
-int	ft_checker(char **argv)
+int	ft_checker(char **splited)
 {
 	int		i;
 
 	i = 0;
-	if (**argv == '\0')
-		return (ft_error(1));
-	if (ft_check_doublons(argv))
-		return (ft_error(1));
-	while (argv[i])
+	if (**splited == '\0')
+		return (ft_error(splited, 1));
+	if (ft_check_doublons(splited))
+		return (ft_error(splited, 1));
+	while (splited[i])
 	{
-		if (long_atoi(argv[i]) > INT_MAX || long_atoi(argv[i]) < INT_MIN)
-			return (ft_error(1));
-		if (is_not_a_number(argv[i]))
-			return (ft_error(1));
+		if (long_atoi(splited[i]) > INT_MAX || long_atoi(splited[i]) < INT_MIN)
+			return (ft_error(splited, 1));
+		if (is_not_a_number(splited[i]))
+			return (ft_error(splited, 1));
 		i++;
 	}
 	return (0);

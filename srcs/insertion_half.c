@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   insertion_half.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 01:46:21 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 18:12:04 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 20:04:10 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	take_next(t_db *dbla, t_db *dblb, int *c)
 	while (dblb->f->a != c[0] && r_rr(ls_ar(dblb), c[0], ls_size(dblb)) <= 1)
 		do_rrb(dbla, dblb);
 	do_pa(dbla, dblb);
+	free(c);
 }
 
 void	take_inter(t_db *dbla, t_db *dblb, int *c)
@@ -62,14 +63,15 @@ void	take_inter(t_db *dbla, t_db *dblb, int *c)
 		while (--b)
 			do_rra(dbla, dblb);
 	}
+	free(c);
 }
 
 void	ft_do(t_db *dbla, t_db *dblb, int size)
 {
 	int		*c;
 
-	c = ft_bubble(ls_ar(dbla), ls_size(dbla));
 	choose_sort_stack(dbla, dblb, size);
+	//c = ft_bubble(ls_ar(dbla), ls_size(dbla));
 	while (dblb->f)
 	{
 		c = ft_reverse_bubble(ls_ar(dblb), ls_size(dblb));

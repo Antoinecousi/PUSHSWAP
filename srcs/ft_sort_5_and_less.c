@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_5_and_less.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 18:41:57 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 04:20:38 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:22:04 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,5 @@ void	move_five(t_db *dbla, t_db *dblb)
 				do_ra(dbla, dblb);
 		}
 	}
+	free(bubbled);
 }

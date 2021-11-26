@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pretri.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:18:30 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 17:41:01 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:27:26 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_quatre_split(t_db *dbla, t_db *dblb)
 		else
 			do_ra(dbla, dblb);
 	}
+	free(tab);
 }
 
 int	ft_splitter(t_db *dbla, t_db *dblb, int until, int div_med)

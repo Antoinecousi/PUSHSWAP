@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calculs_inter.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acousini <acousini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dodjian <dovdjianpro@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 20:59:11 by acousini          #+#    #+#             */
-/*   Updated: 2021/11/26 05:06:10 by acousini         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:58:35 by dodjian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	ft_take_inter(int *tab, int inter, int final, int size)
 		reader = ft_inter_calcul_backward(i - 1, j - 1, size);
 	if (j - 1 <= size / 2)
 		reader = ft_inter_calcul_forward(i - 1, j - 1, size);
+	free(tab);
 	return (reader);
 }
 
@@ -85,6 +86,7 @@ int	ft_direction_after_inter(int *tab, int inter, int final, int size)
 			tmpfinal = index;
 		index++;
 	}
+	free(tab);
 	if ((tmpinter < tmpfinal && tmpfinal - tmpinter <= size / 2)
 		|| (tmpfinal < tmpinter && tmpinter - tmpfinal >= size / 2))
 		return (1);
