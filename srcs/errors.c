@@ -73,7 +73,11 @@ int	is_not_a_number(char *str)
 		|| str[i] == '\v' || str[i] == '\f')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
+	{
 		i++;
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			return (1);
+	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		i++;

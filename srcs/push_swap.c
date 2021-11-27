@@ -51,6 +51,8 @@ int	*ls_ar(t_db *dbl)
 
 	i = 0;
 	tab = malloc((sizeof(int) * ls_size(dbl)) + 8);
+	if (!tab)
+		exit(2);
 	a = dbl->f;
 	while (a != NULL)
 	{
@@ -69,11 +71,15 @@ char	**array_str_copy(char **str, int size)
 	char	**splited;
 
 	splited = malloc(sizeof(char *) * size);
+	if (splited == NULL)
+		exit(2);
 	i = 0;
 	while (str[i])
 	{
 		j = 0;
 		splited[i] = malloc(sizeof(char) * (ft_strlen(str[i])) + 1);
+		if (splited == NULL)
+			exit(2);
 		while (str[i][j])
 		{
 			splited[i][j] = str[i][j];
